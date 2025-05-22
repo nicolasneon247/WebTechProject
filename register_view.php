@@ -133,6 +133,11 @@
                     <div class="alert alert-danger rounded-pill"><?= htmlspecialchars($error) ?></div>
                     <?php elseif ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
                     <div class="alert alert-success rounded-pill">Registrierung erfolgreich!</div>
+                    <script>
+                        setTimeout(() => {
+                            window.location.href = 'main_categories.php';
+                        }, 500);
+                    </script>
                     <?php endif; ?>
 
                     <div class="mb-4">
@@ -170,32 +175,10 @@
                 </div>
             </div>
         </div>
-
-        <div class="container mt-5">
-            <h2 class="text-center">All Records</h2>
-            <table class="table table-dark table-striped mt-3">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Passwort</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($records as $record): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($record['id']) ?></td>
-                        <td><?= htmlspecialchars($record['name']) ?></td>
-                        <td><?= htmlspecialchars($record['passwort']) ?></td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
     </div>
 
     <footer class="text-center mt-5">
-        <p>&copy; MovieFinder</p>
+        <p>&copy; MovieFinder 2025</p>
         <div class="social-icons">
             <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran" target="_blank"><i
                     class="bi bi-facebook"></i></a>

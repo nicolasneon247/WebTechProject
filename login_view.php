@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Nachrichten auslesen und dann löschen
 $error = $_SESSION['error'] ?? '';
 $loginSuccess = $_SESSION['loginSuccess'] ?? false;
 $records = $_SESSION['records'] ?? [];
@@ -144,6 +143,11 @@ unset($_SESSION['error'], $_SESSION['loginSuccess'], $_SESSION['records']);
                     <div class="alert alert-danger rounded-pill"><?= htmlspecialchars($error) ?></div>
                     <?php elseif ($loginSuccess): ?>
                     <div class="alert alert-success rounded-pill">Login erfolgreich!</div>
+                    <script>
+                        setTimeout(() => {
+                            window.location.href = 'main_categories.php';
+                        }, 500);
+                    </script>
                     <?php endif; ?>
 
                     <div class="mb-4">
@@ -176,32 +180,10 @@ unset($_SESSION['error'], $_SESSION['loginSuccess'], $_SESSION['records']);
                 </div>
             </div>
         </div>
-
-        <div class="container mt-5">
-            <h2 class="text-center">All Records</h2>
-            <table class="table table-dark table-striped mt-3">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Passwort</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($records as $index => $record): ?>
-                    <tr>
-                        <td><?= $index + 1 ?></td>
-                        <td><?= htmlspecialchars($record['name']) ?></td>
-                        <td><?= htmlspecialchars($record['passwort']) ?></td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
     </div>
 
     <footer class="text-center mt-5">
-        <p>&copy; MovieFinder</p>
+        <p>&copy; MovieFinder 2025</p>
         <div class="social-icons">
             <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran" target="_blank"><i
                     class="bi bi-facebook"></i></a>
