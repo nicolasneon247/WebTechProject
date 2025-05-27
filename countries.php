@@ -320,7 +320,7 @@ session_start();
 
         document.getElementById('continueBtn').addEventListener('click', function() {
             const selected = document.querySelectorAll('.category-box.selected');
-            window.location.href = 'movie_selection.php';
+            window.location.href = 'movie_length.php'; //Link zur Filmdauer Seite
         });
     });
     </script>

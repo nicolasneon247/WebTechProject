@@ -125,7 +125,7 @@ session_start();
 
     <div class="container mt-5">
         <div class="text-center mb-5">
-            <h1>Wähle bis zu 3 Haupt-Kategorien</h1>
+            <h1>Wähle bis zu 3 Kategorien</h1>
         </div>
         <?php if(isset($_SESSION['error_message'])): ?>
             <div class="alert alert-danger mb-4 text-center">
