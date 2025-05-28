@@ -14,9 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $field1 = $_POST['field1'];
         $field2 = $_POST['field2'];
 
-        $stmt = $conn->prepare("INSERT INTO testtable (name, passwort) VALUES (?, ?)");
-        $stmt->bind_param("ss", $field1, $field2);
-        localStorage.setItem("username", $field1);
+        $stmt = $conn->prepare("INSERT INTO filmverlauf (Benutzer, Film_Titel, Empfohlen_am) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $field1, $field2, $field3);
 
         if (!$stmt->execute()) {
             $error = "Fehler beim Einfügen: " . $stmt->error;

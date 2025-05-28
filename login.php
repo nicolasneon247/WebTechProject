@@ -21,9 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($result->num_rows === 1) {
         $_SESSION['loginSuccess'] = true;
+        $_SESSION['username'] = $username;
     } else {
         $_SESSION['error'] = 'Falscher Benutzername oder Passwort';
     }
+
 
     $stmt->close();
 

@@ -160,7 +160,9 @@ unset($_SESSION['error'], $_SESSION['loginSuccess'], $_SESSION['records']);
                         <input type="password" id="field2" name="field2"
                             class="form-control form-control-lg bg-dark bg-opacity-50 border-0 text-light" required>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg rounded-pill w-100 mb-4">Anmelden</button>
+                    <button type="submit" class="btn btn-primary btn-lg rounded-pill w-100 mb-4" onclick="
+                    localStorage.setItem('username', document.getElementById('field1').value);
+                    ">Anmelden</button>
 
                     <div class="mt-4 pt-3 border-top border-secondary border-opacity-25">
                         <input type="text" id="promptInput"
@@ -195,6 +197,7 @@ unset($_SESSION['error'], $_SESSION['loginSuccess'], $_SESSION['records']);
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
