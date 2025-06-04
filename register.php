@@ -1,4 +1,10 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 $error = '';
 $records = [];
 
@@ -12,11 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         $field1 = $_POST['field1'];
-        $field2 = $_POST['field2'];
+        $field2 = password_hash($_POST['field2'], PASSWORD_DEFAULT);
+
 
         $stmt = $conn->prepare("INSERT INTO testtable (name, passwort) VALUES (?, ?)");
         $stmt->bind_param("ss", $field1, $field2);
-        localStorage.setItem("username", $field1);
+        //localStorage.setItem("username", $field1);
 
         if (!$stmt->execute()) {
             $error = "Fehler beim Einfügen: " . $stmt->error;

@@ -163,15 +163,6 @@ unset($_SESSION['error'], $_SESSION['loginSuccess'], $_SESSION['records']);
                     <button type="submit" class="btn btn-primary btn-lg rounded-pill w-100 mb-4" onclick="
                     localStorage.setItem('username', document.getElementById('field1').value);
                     ">Anmelden</button>
-
-                    <div class="mt-4 pt-3 border-top border-secondary border-opacity-25">
-                        <input type="text" id="promptInput"
-                            class="form-control bg-dark bg-opacity-50 border-0 text-light mb-3"
-                            placeholder="Deine Frage an die KI...">
-                        <button type="button" class="btn btn-outline-primary rounded-pill w-100"
-                            onclick="askChatGPT(document.getElementById('promptInput').value)">Frage senden</button>
-                        <div class="mt-3 text-center" id="chatgpt-result">Keine Antwort</div>
-                    </div>
                 </form>
             </div>
             <div class="col-md-6">
