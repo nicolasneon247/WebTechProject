@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmt = $conn->prepare("INSERT INTO testtable (name, passwort) VALUES (?, ?)");
         $stmt->bind_param("ss", $field1, $field2);
-        //localStorage.setItem("username", $field1);
 
         if (!$stmt->execute()) {
             $error = "Fehler beim Einfügen: " . $stmt->error;

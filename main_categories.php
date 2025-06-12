@@ -119,7 +119,12 @@ session_start();
     <header class="py-3 mb-4 border-bottom">
         <div class="container d-flex justify-content-between align-items-center">
             <h1 class="h3">MovieFinder - Entdecke Filme aus aller Welt!</h1>
-            <a href="logout.php" class="btn btn-primary">Abmelden</a>
+            <div class="d-flex gap-2">
+                <a href="profile.php" class="btn btn-outline-light">
+                    <i class="bi bi-person-circle me-1"></i> Profil
+                </a>
+                <a href="logout.php" class="btn btn-primary">Abmelden</a>
+            </div>
         </div>
     </header>
 

@@ -155,7 +155,7 @@
                         <input type="password" id="field2_repeat" name="field2_repeat"
                             class="form-control form-control-lg bg-dark bg-opacity-50 border-0 text-light" required>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg rounded-pill w-100 mb-4">Registrieren</button>
+                    <button type="submit" class="btn btn-primary btn-lg rounded-pill w-100 mb-4" onclick="localStorage.setItem('username', document.getElementById('field1').value);">Registrieren</button>
                 </form>
             </div>
             <div class="col-md-6">
